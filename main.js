@@ -42,6 +42,25 @@ function init() {
                 }
             },
             {
+                type: "label",
+                props: {
+                    id: "host",
+                    font: $font(13),
+                    align: $align.center,
+                    textColor: $color("#333333b3"),
+                    text: "监听地址 👉 " + options.host + ":" + options.port,
+                },
+                layout: function(make, view) {
+                    make.top.offset( 160 );
+                    make.left.right.inset( 5 );
+                },
+                events: {
+                    tapped: function( sender ) {
+                        
+                    }
+                }
+            },
+            {
                 type: "input",
                 props: {
                     id: "port",
@@ -85,26 +104,6 @@ function init() {
                     }
                 }
             },
-            /*{
-                type: "label",
-                props: {
-                    id: "host",
-                    font: $font(23),
-                    textColor: $color("#333333b3"),
-                    text: "监听地址 👉 " + options.host + ":" + options.port,
-                },
-                layout: function(make, view) {
-                    make.left.inset( 620 );
-                    make.right.inset( 5 );
-                    make.top.offset( 180 );
-                    make.height.equalTo( 50 );
-                },
-                events: {
-                    tapped: function( sender ) {
-                        
-                    }
-                }
-            },*/
             {
                 type: "button",
                 props: {
