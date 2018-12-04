@@ -261,7 +261,7 @@ function server() {
         var url  = request.data.string,
             code = 200;
 
-        console.log( request.data );
+        //console.log( request.data );
 
         if ( url != "" ) {
             $delay( 2, () => {
