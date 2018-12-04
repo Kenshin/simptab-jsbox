@@ -44,36 +44,27 @@ function init() {
             {
                 type: "button",
                 props: {
+                    id: "app",
                     title: "开启监测 >>",
                     bgcolor: $color("#008962")
                 },
                 layout: function(make, view) {
-                    make.left.inset( 5 );
-                    make.width.equalTo( 200 )
-                    make.top.offset( 180 );
-                    make.height.equalTo( 50 );
+                   make.left.right.inset( 5 );
+                   make.top.offset( 180 );
+                   make.height.equalTo( 50 );
                 },
                 events: {
                     tapped: function( sender ) {
-                        app.start( options );
-                    }
-                }
-            },
-            {
-                type: "button",
-                props: {
-                    title: "关闭监测 >>",
-                    bgcolor: $color("#F44336")
-                },
-                layout: function(make, view) {
-                    make.left.inset( 210 );
-                    make.width.equalTo( 200 )
-                    make.top.offset( 180 );
-                    make.height.equalTo( 50 );
-                },
-                events: {
-                    tapped: function( sender ) {
-                        app.stop();
+                        var text = $( "app" ).title;
+                        if ( text.startsWith( "开启" ) ) {
+                            app.start( options );
+                            $( "app" ).title = "关闭监测 >>";
+                            $( "app" ).bgcolor = $color("#F44336");
+                        } else {
+                            app.stop();
+                            $( "app" ).title = "开启监测 >>";
+                            $( "app" ).bgcolor = $color("#008962");
+                        }
                     }
                 }
             },
