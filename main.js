@@ -118,7 +118,7 @@ function init() {
             {
                 type: "button",
                 props: {
-                    title: "版本更新说明 >>",
+                    title: "新手入门 >>",
                     bgcolor: $color("#1dba90")
                 },
                 layout: function(make, view) {
@@ -128,7 +128,7 @@ function init() {
                 },
                 events: {
                     tapped: function( sender ) {
-                        readme( "CHANGELOG.md" );
+                        readme( "README.md" );
                     }
                 }
             },
