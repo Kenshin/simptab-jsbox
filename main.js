@@ -197,7 +197,7 @@ function init() {
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
-                    make.top.offset( 500 );
+                    make.top.offset( 480 );
                     make.height.equalTo( 50 );
                 },
                 events: {
