@@ -267,6 +267,7 @@ function server() {
             props: {
                 json: {
                     "status": code,
+                    "name": $device.info.name
                 }
             }
         };
