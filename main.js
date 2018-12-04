@@ -42,6 +42,23 @@ function init() {
                 }
             },
             {
+                type: "input",
+                props: {
+                    id: "port",
+                    placeholder: "默认端口为 " + options.port,
+                },
+                layout: function(make, view) {
+                    make.left.right.inset( 5 );
+                    make.top.offset( 180 );
+                    make.height.equalTo( 50 );
+                },
+                events: {
+                    changed: function() {
+                        options.port = $("port").text;
+                    }
+                }
+            },
+            {
                 type: "button",
                 props: {
                     id: "app",
@@ -49,9 +66,9 @@ function init() {
                     bgcolor: $color("#008962")
                 },
                 layout: function(make, view) {
-                   make.left.right.inset( 5 );
-                   make.top.offset( 180 );
-                   make.height.equalTo( 50 );
+                    make.left.right.inset( 5 );
+                    make.top.offset( 240 );
+                    make.height.equalTo( 50 );
                 },
                 events: {
                     tapped: function( sender ) {
@@ -68,25 +85,7 @@ function init() {
                     }
                 }
             },
-            {
-                type: "input",
-                props: {
-                    id: "port",
-                    placeholder: "默认端口为 " + options.port,
-                },
-                layout: function(make, view) {
-                    make.left.inset( 415 );
-                    make.width.equalTo( 200 )
-                    make.top.offset( 180 );
-                    make.height.equalTo( 50 );
-                },
-                events: {
-                    changed: function() {
-                        options.port = $("port").text;
-                    }
-                }
-            },
-            {
+            /*{
                 type: "label",
                 props: {
                     id: "host",
@@ -105,7 +104,7 @@ function init() {
                         
                     }
                 }
-            },
+            },*/
             {
                 type: "button",
                 props: {
@@ -114,7 +113,7 @@ function init() {
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
-                    make.top.offset( 240 );
+                    make.top.offset( 300 );
                     make.height.equalTo( 50 );
                 },
                 events: {
@@ -131,7 +130,7 @@ function init() {
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
-                    make.top.offset( 300 );
+                    make.top.offset( 360 );
                     make.height.equalTo( 50 );
                 },
                 events: {
@@ -163,7 +162,7 @@ function init() {
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
-                    make.top.offset( 360 );
+                    make.top.offset( 420 );
                     make.height.equalTo( 50 );
                 },
                 events: {
@@ -203,7 +202,7 @@ function init() {
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
-                    make.top.offset( 420 );
+                    make.top.offset( 500 );
                     make.height.equalTo( 50 );
                 },
                 events: {
