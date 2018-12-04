@@ -45,7 +45,7 @@ function init() {
                 type: "button",
                 props: {
                     title: "开启监测 >>",
-                    bgcolor: $color("#0069c0")
+                    bgcolor: $color("#008962")
                 },
                 layout: function(make, view) {
                     make.left.inset( 5 );
@@ -119,7 +119,7 @@ function init() {
                 type: "button",
                 props: {
                     title: "版本更新说明 >>",
-                    bgcolor: $color("#2196F3")
+                    bgcolor: $color("#1dba90")
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
@@ -136,7 +136,7 @@ function init() {
                 type: "button",
                 props: {
                     title: "关于简 Tab >>",
-                    bgcolor: $color("#2196F3")
+                    bgcolor: $color("#1dba90")
                 },
                 layout: function(make, view) {
                     make.left.right.inset( 5 );
