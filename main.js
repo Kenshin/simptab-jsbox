@@ -19,10 +19,6 @@ function init() {
         views: [{
             type: "scroll",
             layout: $layout.fill,
-            props: {
-                //alwaysBounceHorizontal: false,
-                //showsHorizontalIndicator: false,
-            },
             views: [
                 {
                     type: "image",
@@ -44,8 +40,8 @@ function init() {
                         align: $align.center
                     },
                     layout: function(make, view) {
+                        make.width.equalTo( view.super );
                         make.top.offset( 130 );
-                        make.left.right.inset( 5 );
                     }
                 },
                 {
@@ -58,8 +54,8 @@ function init() {
                         text: "监听地址 👉 " + options.host + ":" + options.port,
                     },
                     layout: function(make, view) {
+                        make.width.equalTo( view.super );
                         make.top.offset( 160 );
-                        make.left.right.inset( 5 );
                     },
                 },
                 {
@@ -70,7 +66,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 180 );
                         make.height.equalTo( 50 );
                     },
@@ -90,7 +85,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 240 );
                         make.height.equalTo( 50 );
                     },
@@ -117,7 +111,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 300 );
                         make.height.equalTo( 50 );
                     },
@@ -135,7 +128,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 360 );
                         make.height.equalTo( 50 );
                     },
@@ -168,7 +160,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 420 );
                         make.height.equalTo( 50 );
                     },
@@ -209,7 +200,6 @@ function init() {
                     },
                     layout: function(make, view) {
                         make.width.equalTo( view.super );
-                        make.left.right.inset( 0 );
                         make.top.offset( 480 );
                         make.height.equalTo( 50 );
                     },
