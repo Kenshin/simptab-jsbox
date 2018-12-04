@@ -54,11 +54,6 @@ function init() {
                     make.top.offset( 160 );
                     make.left.right.inset( 5 );
                 },
-                events: {
-                    tapped: function( sender ) {
-                        
-                    }
-                }
             },
             {
                 type: "input",
@@ -73,7 +68,8 @@ function init() {
                 },
                 events: {
                     changed: function() {
-                        options.port = $("port").text;
+                        options.port     = $("port").text;
+                        $( "host" ).text = "监听地址 👉 " + options.host + ":" + options.port;
                     }
                 }
             },
