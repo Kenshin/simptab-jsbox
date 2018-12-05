@@ -15,6 +15,7 @@ main();
  * Init
  */
 function main() {
+    options.host == "error" && $ui.error( "请先连接网络" );
     $ui.render({
         views: [{
             type: "scroll",
