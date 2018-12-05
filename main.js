@@ -255,7 +255,8 @@ function server() {
         if ( url != "" ) {
             $delay( 2, () => {
                 $ui.toast( "接受完毕，开始下载，请稍等!" );
-                download( url );
+                //download( url );
+                base64toPNG( url );
             });
         } else {
             code = 500;
@@ -278,6 +279,38 @@ function server() {
 
     // Start the server
     //app.start( options );
+}
+
+function decodeBase64( string ) {
+    var url  = $objc( "NSURL"  ).$URLWithString( string ),
+        file = $objc( "NSData" ).$dataWithContentsOfURL( url );
+    return file.rawValue();
+}
+
+function base64toPNG( base64 ) {
+    var data = decodeBase64( base64 );
+    $photo.save({
+        data: data,
+        handler: function(success) {
+            $ui.alert({
+                title: "壁纸下载成功！",
+                actions: [
+                    {
+                        title: "完成",
+                        handler: function() {
+                            //TO-DO
+                        }
+                    },
+                    {
+                        title: "是否打开相册？",
+                        handler: function() {
+                            $app.openURL("photos-redirect://");
+                        }
+                    }
+                ]
+            });
+        }
+    });
 }
 
 function download( url ) {
