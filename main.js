@@ -9,12 +9,12 @@ var version = "1.0.0",
     };
 
 server();
-init();
+main();
 
 /**
  * Init
  */
-function init() {
+function main() {
     $ui.render({
         views: [{
             type: "scroll",
