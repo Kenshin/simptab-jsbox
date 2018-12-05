@@ -168,11 +168,11 @@ function main() {
                             $ui.loading( true );
                             if ( $("update").title == "点击更新 >>" ) {
                                 $ui.loading( false );
-                                $app.openURL("https://xteko.com/redir?url=http://sr.ksria.cn/jsbox/simpread-" + version + ".box?" + Math.round(+new Date()) + "&name=%E7%AE%80%E6%82%A6");
+                                $app.openURL("https://xteko.com/redir?url=http://st.ksria.cn/jsbox/simptab-" + version + ".box?" + Math.round(+new Date()) + "&name=%E7%AE%80%20Tab");
                                 return;
                             }
                             $http.get({
-                                url: "http://sr.ksria.cn/versions.json?" + Math.round(+new Date()),
+                                url: "http://st.ksria.cn/versions.json?" + Math.round(+new Date()),
                                 handler: function( resp ) {
                                     $ui.loading( false );
                                     if ( resp.error != null ) {
