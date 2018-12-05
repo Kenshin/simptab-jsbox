@@ -273,14 +273,13 @@ function server() {
     app.addHandler( handler );
 }
 
-function decodeBase64( string ) {
-    var url  = $objc( "NSURL"  ).$URLWithString( string ),
-        file = $objc( "NSData" ).$dataWithContentsOfURL( url );
-    return file.rawValue();
-}
-
 function base64toPNG( base64 ) {
-    var data = decodeBase64( base64 );
+    var decodeBase64 = function ( string ) {
+            var url  = $objc( "NSURL"  ).$URLWithString( string ),
+                file = $objc( "NSData" ).$dataWithContentsOfURL( url );
+            return file.rawValue();
+        },
+        data = decodeBase64( base64 );
     savePhoto( data );
 }
 
