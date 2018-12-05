@@ -289,6 +289,25 @@ function decodeBase64( string ) {
 
 function base64toPNG( base64 ) {
     var data = decodeBase64( base64 );
+    savePhoto( data );
+}
+
+function download( url ) {
+    $http.download({
+        url: url,
+        progress: function(bytesWritten, totalBytes) {
+            var percent = bytesWritten * 1.0 / totalBytes;
+            $ui.progress( percent );
+            //console.log( percent )
+            //$( "progress" ).value( percent );
+        },
+        handler: function( resp ) {
+            savePhoto( resp.data );
+        }
+    });
+}
+
+function savePhoto( data ) {
     $photo.save({
         data: data,
         handler: function(success) {
@@ -310,42 +329,5 @@ function base64toPNG( base64 ) {
                 ]
             });
         }
-    });
+    })
 }
-
-function download( url ) {
-    $http.download({
-        url: url,
-        progress: function(bytesWritten, totalBytes) {
-            var percent = bytesWritten * 1.0 / totalBytes;
-            $ui.progress( percent );
-            //console.log( percent )
-            //$( "progress" ).value( percent );
-        },
-        handler: function( resp ) {
-            $photo.save({
-                data: resp.data,
-                handler: function(success) {
-                    $ui.alert({
-                        title: "壁纸下载成功！",
-                        actions: [
-                            {
-                                title: "完成",
-                                handler: function() {
-                                    //TO-DO
-                                }
-                            },
-                            {
-                                title: "是否打开相册？",
-                                handler: function() {
-                                    $app.openURL("photos-redirect://");
-                                }
-                            }
-                        ]
-                    });
-                }
-            })
-        }
-    });
-}
-
