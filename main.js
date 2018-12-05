@@ -216,7 +216,6 @@ function init() {
 
 function server() {
 
-    // Observe events
     app.listen({
         didStart: app => {
             $delay( 0.1, () => {
@@ -234,17 +233,14 @@ function server() {
         didUpdateNATPortMapping: app => {}
     });
 
-    // Create a handler
     var handler = {};
 
-    // Handler filter
     handler.filter = rules => {
         var method = rules.method,
             url    = rules.url;
         return "data"; // default, data, file, multipart, urlencoded
     }
 
-    // Handler response
     handler.response = request => {
 
         var url  = request.data.string,
@@ -274,11 +270,7 @@ function server() {
         };
     }
 
-    // Register handler
     app.addHandler( handler );
-
-    // Start the server
-    //app.start( options );
 }
 
 function decodeBase64( string ) {
